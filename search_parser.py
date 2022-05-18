@@ -17,3 +17,12 @@ class SearchParser:
                 list_of_employees_links.add(i)
 
         return list_of_employees_links
+
+    @staticmethod
+    def create_dictionaries_from_links(loel):
+        final_list = []
+        for i in loel:
+            final_list.append({
+                "profile_link": str(i)
+            })
+        return final_list
