@@ -1,3 +1,5 @@
+import time
+
 import requests
 
 from config import headers, cookies
@@ -31,6 +33,9 @@ class SearchTool:
         result = set()
         for i in range(2, 101):
             params['page'] = str(i)
+            if i == 50 or i == 25 or i == 75:
+                print("hit break point sleeping for 5s...")
+                time.sleep(5)
             response = requests.get('https://www.linkedin.com/search/results/people/', params=params, cookies=cookies,
                                     headers=headers)
 
