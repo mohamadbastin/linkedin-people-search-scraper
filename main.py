@@ -2,16 +2,17 @@ import time
 
 from database import DatabaseManager
 from search_tool import SearchTool
-from params import params_list_18_5_13_32
+from params import params_list_22_5_01_34_is_done
 
 db = DatabaseManager.init()
 people_nvidia_collection = db["people-nvidia"]
 
 print("connected to database")
-len_of_params = len(params_list_18_5_13_32)
+list_of_params = params_list_22_5_01_34_is_done
+len_of_params = len(list_of_params)
 counter = 1
 starting_point = 0
-for param in params_list_18_5_13_32:
+for param in list_of_params:
     if counter <= starting_point:
         print(f"skipping param {counter} / {len_of_params}")
         counter += 1
